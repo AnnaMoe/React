@@ -4,7 +4,7 @@ import './ExpenseItem.css';
 
 // props allows you to pass data from another component to this component
 // props is key-value pairs here
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   
 
   return (
