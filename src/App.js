@@ -1,6 +1,7 @@
 // react-import used under the hood in every file
 // import React from 'react;
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   const expenses = [
@@ -34,7 +35,7 @@ const App = () => {
   return (
     // jsx (developer friendly code) which works because of the transformation steps behind the scences
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense/>
       <Expenses items={expenses} />
     </div>
   );
