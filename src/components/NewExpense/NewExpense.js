@@ -9,6 +9,7 @@ const NewExpense = (props) => {
     };
     console.log(expenseData);
     
+    // lifting data(state) up to the App component
     props.onAddExpense(expenseData);
   }
 
