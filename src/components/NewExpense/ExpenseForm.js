@@ -47,12 +47,17 @@ const ExpenseForm = () => {
     event.preventDefault();
 
     const expenseData = {
+      // combine all the entered data to an object
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate)
 
     };
     console.log(expenseData)
+    // after form submit clear the input
+    setEnteredTitle('');
+    setEnteredAmount("");
+    setEnteredDate("");
   }
 
   return (
@@ -61,7 +66,12 @@ const ExpenseForm = () => {
         <div className="new-expense__control">
           <label>Title</label>
           {/* onChange also for Dropdown */}
-          <input type="title" onChange={titleChangeHandler} />
+          <input
+            type="title"
+            // feed state back into the input with value
+            value={enteredTitle}
+            onChange={titleChangeHandler}
+          />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
@@ -69,6 +79,7 @@ const ExpenseForm = () => {
             type="number"
             min="0.01"
             step="0.01"
+            value={enteredAmount}
             onChange={amountChangeHandler}
           />
         </div>
@@ -78,6 +89,7 @@ const ExpenseForm = () => {
             type="date"
             min="2018-01-01"
             max="2022-12-31"
+            value={enteredDate}
             onChange={dateChangeHandler}
           />
         </div>
