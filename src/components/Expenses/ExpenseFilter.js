@@ -4,7 +4,7 @@ import "./ExpenseFilter.css";
 const ExpenseFilter = (props) => {
 
   const dropdownChangeHandler = (event) => {
-    // forward selected year (event.target.value) as a parameter of the function filterChangeHandler in Expenses.js
+    // forward selected year (event.target.value) to Expenses.js as a parameter of the function filterChangeHandler
     props.onChangeFilter(event.target.value);
   };
 

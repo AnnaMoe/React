@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import ExpenseFilter from './ExpenseFilter';
 
 const Expenses = (props) => {
+  // save selected year in a state
   const [filteredYear, setFilteredYear] = useState('2020');
   const filterChangeHandler = selectedYear => {
     setFilteredYear(selectedYear);

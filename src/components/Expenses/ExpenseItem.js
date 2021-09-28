@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+// stateless component - no internal state - just there to output some data
 
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
@@ -10,21 +10,14 @@ const ExpenseItem = (props) => {
  
   // react-hook:
   // with this hook the props.title can be changed -- component function will be called again - assign a new value to this state
-  const [title, setTitle] = useState(props.title);
-
-  const clickHandler = () => {
-    setTitle('Updated');
-    console.log(title);
-  };
 
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date}/>
       <div className="expense-item__description">
-        <h2>{title}</h2>
+        <h2>{props.title}</h2>
         <div className="expense-item__price">{props.amount}</div>
       </div>
-      <button onClick={clickHandler}>Change Title</button>
     </Card>
   );
   
